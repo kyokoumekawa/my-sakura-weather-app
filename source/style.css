@@ -110,3 +110,8 @@ li {
   text-align: center;
   margin-right: auto;
 }
+
+small {
+  color: white;
+  box-sizing: border-box;
+}
