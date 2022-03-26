@@ -41,8 +41,14 @@ li {
   -webkit-backdrop-filter: blur(12px);
   padding: 50px 30px 50px 30px;
   margin: 121px auto;
+  margin-bottom: 0;
   border-radius: 20px;
   max-width: 900px;
+}
+
+.weather-app-wrapper {
+  max-width: 900px;
+  margin: 121px auto;
 }
 
 .fa-sun:before {
@@ -113,5 +119,4 @@ li {
 
 small {
   color: white;
-
 }
