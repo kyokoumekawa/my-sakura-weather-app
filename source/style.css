@@ -32,6 +32,7 @@ li {
   height: 25px;
   line-height: -2px;
   list-style: none;
+  text-transform: capitalize;
 }
 
 .weather-app {
