@@ -44,6 +44,8 @@ function displayWeatherCondition(response) {
     response.data.weather[0].description;
 }
 
+celsiusTemperature = response.data.main.temp;
+
 function searchCity(city) {
   let apiKey = "4f9d9019043feea9282c5c56f740cfa9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -67,16 +69,17 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function convertToFahrenheit(event) {
+function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let temperatureElemet = document.querySelector("#temperature");
-  temperatureElemet.innerHTML = 66;
+  let temperatureElemet = document.querySelector("temperature");
+  let fahrenheitTemperature = (temperatureElemet.innerHTML * 9) / 5 + 32;
+  temperatureElemet.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElemet = document.querySelector("#temperature");
-  temperatureElemet.innerHTML = 8;
+  temperatureElemet.innerHTML = Math.round(celsiusTemperature);
 }
 
 let dateElement = document.querySelector("#date");
@@ -90,3 +93,8 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Tokyo");
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
