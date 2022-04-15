@@ -87,6 +87,17 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Tokyo");
 
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElemet = document.querySelector("#temperature");
+  temperatureElemet.innerHTML = Math.round(celsiusTemperature);
+}
+
 let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -94,6 +105,9 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElemet = document.querySelector("#temperature");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElemet.innerHTML = Math.round(fahrenheitTemperature);
 }

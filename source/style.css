@@ -95,9 +95,26 @@ li:first-letter {
   line-height: 1;
 }
 
-.units {
+.weather-temperature img {
+  margin-right: 1px;
+  height: 100px;
+  width: 100px;
+  margin-top: -17px;
+}
+
+.weather-temperature .units {
   position: relative;
   top: -39px;
+}
+
+.weather-temperature .active {
+  color: white;
+  cursor: default;
+  text-decoration: none;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
 
 .search-form {
