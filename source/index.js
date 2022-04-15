@@ -42,9 +42,9 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
-}
 
-celsiusTemperature = response.data.main.temp;
+  celsiusTemperature = response.data.main.temp;
+}
 
 function searchCity(city) {
   let apiKey = "4f9d9019043feea9282c5c56f740cfa9";
@@ -69,13 +69,6 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElemet = document.querySelector("temperature");
-  let fahrenheitTemperature = (temperatureElemet.innerHTML * 9) / 5 + 32;
-  temperatureElemet.innerHTML = Math.round(fahrenheitTemperature);
-}
-
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElemet = document.querySelector("#temperature");
@@ -96,5 +89,11 @@ searchCity("Tokyo");
 
 let celsiusTemperature = null;
 
-let fahrenheitLink = document.querySelector("fahrenheit-link");
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElemet = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElemet.innerHTML = Math.round(fahrenheitTemperature);
+}
