@@ -145,7 +145,7 @@ li:first-letter {
 
 .weather-forcast-date {
   padding: 0.8em 0;
-  width: 13%;
+  width: 100%;
   border-radius: 10px;
   background-color: #ffffff35;
   backdrop-filter: blur(14.5px);
@@ -154,6 +154,14 @@ li:first-letter {
   font-weight: 400;
   text-align: center;
   margin-right: auto;
+}
+
+.weather-forcast-temperatures {
+  font-size: 16px;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
 }
 
 small {
