@@ -138,6 +138,24 @@ li:first-letter {
   margin-right: auto;
 }
 
+.weather-forcast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-forcast-date {
+  padding: 0.8em 0;
+  width: 13%;
+  border-radius: 10px;
+  background-color: #ffffff35;
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  margin-right: auto;
+}
+
 small {
   color: white;
 }
