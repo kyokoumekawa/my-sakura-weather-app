@@ -21,6 +21,34 @@ function formatDate(date) {
   return `${days[dayIndex]} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forcastElement = document.querySelector("#forecast");
+
+  let forcastHTML = `<div class="row">`;
+  let days = ["Wednesday", "Thursday", "Friday", "Saturday"];
+  days.forEach(function (day) {
+    forcastHTML =
+      forecastHTML +
+      `
+              <div class="col-2">
+                <div class="weather-forcast-date">
+                 ${day}
+                  <br />
+                  <i class="fa fa-regular fa-sun fa-2x"></i>
+                  <br />
+                  <div class="weather-forcast-temperatures">
+                    <span class="weather-forecast-temperature-max">18° </span>
+                    <span class="weather-forecast-temperature-min">12° </span>
+                  </div>
+                </div>
+            </div>
+  `;
+  });
+
+  forcastHTML = forcastHTML + `</div>`;
+  forcastElement.innerHTML = forcastHTML;
+}
+
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -111,3 +139,5 @@ function displayFahrenheitTemperature(event) {
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElemet.innerHTML = Math.round(fahrenheitTemperature);
 }
+
+displayForecast();
