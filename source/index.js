@@ -57,7 +57,7 @@ function displayForecast(response) {
                     forecastDay.weather[0].icon
                   }@2x.png"
                   alt=""
-                  width="42"
+                  width="90"
                   <br />
                   <div class="weather-forcast-temperatures">
                     <span class="weather-forecast-temperature-max">${Math.round(
